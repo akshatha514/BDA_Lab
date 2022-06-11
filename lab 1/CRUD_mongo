@@ -1,0 +1,23 @@
+mongo
+use student;
+show dbs;
+db.createCollection("students");
+> db.student.insert({_id:1,Name:"Aliya",USN:"1BM19CS001",Sem:6,Dept:'CSE',CGPA:9,hobbies:["Skate","Swim"]});
+> db.student.insert({_id:2,Name:"Aryan",USN:"1BM19CS012",Sem:6,Dept:'CSE',CGPA:9,hobbies:["Dance","Swim"]});
+> db.student.insert({_id:3,Name:"Akhil",USN:"1BM19CS015",Sem:6,Dept:'CSE',CGPA:9,hobbies:["Dance","Sing"]});
+
+// list all documents
+> db.student.find({});
+
+// find methods
+> db.student.find({Name:"Aryan"});
+> db.student.find({},{Name:2,_id:0});
+
+// updation
+> db.student.update({_id:4},{$set:{USN:"1BM20CS023"});
+
+// import 
+mongoimport --db student --collection students --type csv --headerline --file /home/output.csv
+
+// export to csv
+mongoexport --host localhost --db student --collection student --type=csv --out  output.csv --fields "USN","semester","Name","dept_name"
