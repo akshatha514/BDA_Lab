@@ -111,3 +111,5 @@ cqlsh:Employee> SELECT * FROM employee_info;
     121 | 2021-03-16 00:00:00.000000+0000 |  Software | Software Developer |     Rosy |  {'Employee management app', 'company website'} |  80000
 
 (3 rows)
+
+
